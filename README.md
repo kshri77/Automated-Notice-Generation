@@ -28,7 +28,10 @@ INAS is a sophisticated web-based utility designed to standardize and streamline
    git clone https://github.com
    npm install
 
-   <img width="1550" height="746" alt="Screenshot 2026-04-20 123228" src="https://github.com/user-attachments/assets/a172fd54-5745-4155-8142-f06cd6888391" />
+   ![App Screenshot](screenshots/preview1.png)
+   ![App Screenshot](screenshots/preview2.png)
+   
+   
 
 
 
