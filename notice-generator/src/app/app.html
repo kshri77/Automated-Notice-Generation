@@ -1,0 +1,55 @@
+<div class="main-container">
+  <!-- Form Section -->
+  <div class="input-panel">
+    <h3>Design Your Notice</h3>
+    <form [formGroup]="noticeForm" class="grid-form">
+      <input formControlName="collegeName" placeholder="College Name">
+      <input formControlName="logoUrl" placeholder="Logo Image URL">
+      <input formControlName="name" placeholder="Club/Organiser Name">
+      <input formControlName="event" placeholder="Event Name">
+      <input formControlName="date" type="date">
+      <input formControlName="timing" placeholder="Time (e.g. 10AM)">
+      <input formControlName="venue" placeholder="Venue">
+      
+      <!-- ADDED DOWNLOAD BUTTON -->
+      <button (click)="downloadPDF()" [disabled]="!noticeForm.valid" 
+              style="width:100%; padding:10px; background:#27ae60; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">
+        Download PDF
+      </button>
+    </form>
+  </div>
+
+  <!-- Preview Section - ADDED #noticeContent REFERENCE HERE -->
+  <div class="notice-preview" #noticeContent style="width: 297mm; height: 210mm;">
+    <div class="notice-header">
+      <img [src]="noticeForm.value.logoUrl" alt="Club Logo" class="club-logo">
+      <div class="header-text">
+        <h1>{{ f.collegeName }}</h1>
+        <h3>{{ f.name }}</h3>
+      </div>
+    </div>
+    
+    <div class="notice-body" *ngIf="noticeForm.valid; else prompt">
+      <div class="title-ribbon">NOTICE</div>
+      <p class="date-line">Date: {{ f.date | date:'mediumDate' }}</p>
+      
+      <div class="content">
+        <p>This is to inform all students that the <strong>{{ f.name }}</strong> is hosting 
+        <strong>{{ f.event }}</strong>. We invite enthusiastic participation from everyone.</p>
+        
+        <div class="details-box">
+          <p>🌆 <strong>Event Name:</strong> {{ f.event }}</p>
+          <p>📍 <strong>Venue:</strong> {{ f.venue }}</p>
+          <p>⏰ <strong>Timing:</strong> {{ f.timing }}</p>
+         
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>___________________</p>
+        <p>Convener, {{ f.name }}</p>
+      </div>
+    </div>
+    <ng-template #prompt><p class="placeholder">Complete form to preview notice...</p></ng-template>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.main-container { display: flex; gap: 30px; padding: 30px; font-family: 'Segoe UI', sans-serif; }
+.input-panel { width: 350px; background: #f4f4f4; padding: 20px; border-radius: 8px; }
+.grid-form input { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; }
+
+/* Add these to your existing CSS */
+.notice-preview { 
+  width: 297mm; /* Landscape Width */
+  height: 210mm; /* Landscape Height */
+  min-width: 297mm;
+  flex: none; /* Prevent flex-grow from breaking dimensions */
+  border: 10px solid #2c3e50; 
+  padding: 40px; 
+  background: white; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+  position: relative;
+  box-sizing: border-box;
+}
+
+.notice-header { display: flex; align-items: center; border-bottom: 2px solid #2c3e50; padding-bottom: 15px; margin-bottom: 20px; }
+.club-logo { height: 80px; width: 80px; margin-right: 20px; object-fit: contain; }
+.header-text h1 { margin: 0; color: #2c3e50; font-size: 1.8rem; text-transform: uppercase; }
+.header-text h3 { margin: 5px 0 0; color: #7f8c8d; font-weight: 400; }
+
+.title-ribbon { 
+  background: #2c3e50; color: white; padding: 5px 30px; 
+  width: fit-content; margin: 20px auto; font-weight: bold; letter-spacing: 2px;
+}
+
+.details-box { background: #f9f9f9; padding: 15px; border-left: 5px solid #2c3e50; margin: 20px 0; }
+.footer { margin-top: 50px; text-align: right; font-weight: bold; }
